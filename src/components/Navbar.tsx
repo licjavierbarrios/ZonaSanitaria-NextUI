@@ -3,6 +3,7 @@ import { buttonVariants } from "./ui/button";
 import { HandMetal } from "lucide-react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils/auth";
+import DarkMode from "./DarkMode";
 import LogoutButton from "./LogoutButton";
 
 const Navbar = async () => {
@@ -13,11 +14,11 @@ const Navbar = async () => {
         <Link href="/">
           <HandMetal />
         </Link>
-        <Link className={buttonVariants()} href="/api/auth/signin">
+        <Link className={buttonVariants()} href="/">
           HOME
         </Link>
-        <Link className={buttonVariants()} href="/api/auth/signout">
-          CONFIG
+        <Link className={buttonVariants()} href="/agentes">
+          Agentes
         </Link>
         <Link className={buttonVariants()} href="/dashboard">
           DASHBOARD
@@ -30,6 +31,10 @@ const Navbar = async () => {
             Iniciar seción
           </Link>
         )}
+
+        <div>
+          <DarkMode />
+        </div>
       </div>
     </div>
   );
